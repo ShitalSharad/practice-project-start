@@ -2,7 +2,7 @@ name: Lint, Build and Test
 on: push
 jobs:
   lint-build-test:
-    runs-on: ubutu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -13,11 +13,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Lint code
-        needs: Install dependencies
         run: npm run lint
       - name: Build Project
-        needs: Lint code
         run: npm run build
       - name: Run tests
-        needs: Build Project
         run: npm test
