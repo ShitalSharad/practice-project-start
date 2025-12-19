@@ -1,6 +1,6 @@
 name: Lint, Build and Test
 on: push
-stategy:
+strategy:
   matrix:
     node-version: [22]
 jobs:
